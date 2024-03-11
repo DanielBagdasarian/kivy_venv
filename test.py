@@ -1,4 +1,4 @@
-from hikkatl.modules.utils import answer
+from hikkatl.utils import answer
 from hikkatl.types import Message
 from .. import loader
 
