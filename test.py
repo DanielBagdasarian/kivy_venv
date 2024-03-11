@@ -1,13 +1,41 @@
-from hikkatl.utils import answer
 from hikkatl.types import Message
-from .. import loader
+
+from .. import loader, utils
+
+
+
+
 
 @loader.tds
+
 class MyModule(loader.Module):
+
     """My module"""
+
     strings = {"name": "MyModule", "hello": "Hello world!"}
 
-    @loader.command
+    strings_ru = {"hello": "Привет мир!"}
+
+    strings_es = {"hello": "¡Hola mundo!"}
+
+    strings_de = {"hello": "Hallo Welt!"}
+
+
+
+    @loader.command(
+
+        ru_doc="Привет мир!",
+
+        es_doc="¡Hola mundo!",
+
+        de_doc="Hallo Welt!",
+
+        # ...
+
+    )
+
     async def helloworld(self, message: Message):
+
         """Hello world"""
-        await answer(message, self.strings("hello"))
+
+        await utils.answer(message, self.strings("hello"))
