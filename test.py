@@ -1,14 +1,11 @@
 from hikkatl.types import Message
-from .. import loader
+from .. import loader, utils
 
 
 @loader.tds
 class MyModule(loader.Module):
     """My module"""
-    strings = {
-        "name": "MyModuleTest",
-        "hello": "Hello world!"
-    }
+    strings = {"name": "MyModule", "hello": "Hello world!"}
     strings_ru = {"hello": "Привет мир!"}
     strings_es = {"hello": "¡Hola mundo!"}
     strings_de = {"hello": "Hallo Welt!"}
