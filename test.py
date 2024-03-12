@@ -4,8 +4,8 @@ from .. import loader, utils
 
 @loader.tds
 class MyModule(loader.Module):
-    """My module"""
-    strings = {"name": "MyModule", "hello": "Hello world!"}
+    """My module test"""
+    strings = {"name": "MyModuleTest", "hello": "Hello world!"}
     strings_ru = {"hello": "Привет мир!"}
     strings_es = {"hello": "¡Hola mundo!"}
     strings_de = {"hello": "Hallo Welt!"}
@@ -16,6 +16,6 @@ class MyModule(loader.Module):
         de_doc="Hallo Welt!",
         # ...
     )
-    async def helloworld(self, message: Message):
-        """Hello world"""
+    async def helloworldtest(self, message: Message):
+        """Hello world test"""
         await utils.answer(message, self.strings("hello"))
